@@ -30,10 +30,10 @@ const Init =  () => {
     }
 
 
-    let root = location.pathname.split("guideline")[0];
+    let root = location.pathname.split("/guideline")[0];
 
-    new GetIncludes('#header', root + 'guideline/assets/include/header.html', AFTER_HEADER);
-    new GetIncludes('#footer', root + 'guideline/assets/include/footer.html', AFTER_FOOTER);
+    new GetIncludes('#header', "/" + root + 'guideline/assets/include/header.html', AFTER_HEADER);
+    new GetIncludes('#footer', "/" + root + 'guideline/assets/include/footer.html', AFTER_FOOTER);
 
 }
 
