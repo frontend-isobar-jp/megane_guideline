@@ -32,6 +32,8 @@ const Init =  () => {
 
     let root = location.pathname.split("/guideline")[0];
 
+    console.log(root);
+
     new GetIncludes('#header', "/" + root + 'guideline/assets/include/header.html', AFTER_HEADER);
     new GetIncludes('#footer', "/" + root + 'guideline/assets/include/footer.html', AFTER_FOOTER);
 
