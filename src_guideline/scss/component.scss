@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+// font-family,size,やcolor,width等の設定
+@import "../../src/scss/setting/setting";
+@import "setting/_color.scss";
+//
+// // Megane Template Core File
+@import "../../src/scss/mixin";
+
+@import "atom-one-dark";
+
+@import "4_pages/component/component";

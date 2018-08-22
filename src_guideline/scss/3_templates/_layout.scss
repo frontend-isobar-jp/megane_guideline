@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+
+.fw {
+	min-width: $width_main + px;
+	overflow: hidden;
+	font-family: $font_base;
+	color : $color_text;
+	font-size: $font-size_base + px;
+	line-height: $line-height_base;
+
+	#container {
+
+		#contents {
+			float: left;
+			width: $width_contents + px;
+			&.f-max { float: inherit; width: 100%; }
+		}
+
+		#side { width: $width_side + px; float: right; }
+
+	}
+
+
+	// -------------------------------------------
+	// Small Width Layout
+	// -------------------------------------------
+	@include max( $width_main ){
+
+		.f-inner {
+			width: 100%;
+			margin: 0;
+			padding: 0 20px;
+		}
+
+	}
+
+
+	// -------------------------------------------
+	// Liquid Layout
+	// -------------------------------------------
+	@include max( s ){
+
+		min-width: 320px;
+
+		#container {
+
+			#contents {
+				float: inherit; width: 100%;
+				&.f-max { float: inherit; width: 100%; }
+			}
+			#side { width: initial; float: inherit; }
+
+		}
+
+	}
+
+
+// ---------------------------------------------------------------------------
+//
+// tag
+//
+// ---------------------------------------------------------------------------
+
+	a {
+		cursor: pointer;
+		color: $color_link;
+		text-decoration: none;
+		@include transition(0.1);
+		text-decoration: underline;
+		@include min( m ) {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		&[target="_blank"]{
+
+			&:after {
+				content: "\f2d2";
+				-webkit-font-smoothing: antialiased;
+				display: inline-block;
+				font-style: normal;
+				font-variant: normal;
+				text-rendering: auto;
+				line-height: 1;
+				font-family: Font Awesome\ 5 Free;
+				font-weight: 900;
+				color: $black30;
+			}
+		}
+	}
+
+
+	// ----------------------------------------------------------
+	// #localnav
+	// ----------------------------------------------------------
+	#localnav {
+		text-align: center;
+		padding: 15px 0;
+		a {
+			display: inline-block;
+			text-decoration: none;
+			color: $color_text;
+			line-height: 1;
+			padding: 0 20px;
+			border-right: 1px solid $black30;
+			&:last-child {
+				border-right: none;
+			}
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.f-section_s{
+		@include mt( 40px, 20px );
+	}
+
+
+}//.fw

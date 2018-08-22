@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+.fw {
+	// ----------------------------------------------------------
+	// #setting
+	// ----------------------------------------------------------
+	&#setting {
+
+		.box,.f-box_solid {
+			padding: 30px 20px;
+			margin-bottom: 20px;
+		}
+
+		.a-ttl_gl_base{
+			span{
+				display: block;
+				color: $color_main;
+				padding-top: 15px;
+				font-size: 40%;
+			}
+		}
+
+		#siteWidth {
+			.mainWidth {
+				width: $width_main + px;
+			}
+			.contentsWidth {
+				width: $width_contents + px;
+				float: left;
+			}
+			.sideWidth {
+				width: $width_side + px;
+				float: right;
+			}
+		}//#siteWidth
+
+		#breakPoint {
+			.pcWidth {
+			}
+			.tbWidth {
+				width: map-get($breakpoints, m) + px;
+			}
+			.spWidth {
+				width: map-get($breakpoints, s) + px;
+			}
+		}//#breakPoint
+
+		#color {
+			.f-box {
+				text-align: center;
+
+				&.mainColor { background: $color_main; color: #FFF; }
+				&.subColor { background: $color_sub; color: #FFF; }
+				&.linkColor { background: $color_link; color: #FFF; }
+				&.black { background: $color_text; color: #FFF; }
+
+				&.black100 { background: $black100; color: #FFF; }
+				&.black90 { background: $black90; color: #FFF; }
+				&.black80 { background: $black80; color: #FFF; }
+				&.black70 { background: $black70; color: #FFF; }
+				&.black60 { background: $black60; color: #FFF; }
+				&.black50 { background: $black50; color: #FFF; }
+				&.black40 { background: $black40; color: #FFF; }
+				&.black30 { background: $black30; }
+				&.black20 { background: $black20; }
+				&.black10 { background: $black10; }
+				&.black0 { background: $black0; }
+
+				&.red { background: $red; color: #FFF; }
+				&.blue { background: $blue; color: #FFF; }
+				&.yellow { background: $yellow; color: #FFF; }
+				&.green { background: $green; color: #FFF; }
+
+			}
+		}//#color
+
+		#column {
+
+			.columnMargin {
+				text-align: center;
+				position: relative;
+				margin-top: 30px;
+				&:before {
+					content: "";
+					display: block;
+					height: 20px;
+					width: $col_gutter + px;
+					position: absolute;
+					top: -30px; left: 50%;
+					transform: translate(-50%, 0);
+					border: 1px solid $black80;
+					border-top: none;
+				}
+			}
+
+		}//#column
+
+		#form{
+			// Form 　Radio Checkbox説明
+			// -----------------------------------------------------
+			.formSize {
+				position: relative;
+				.sizeInput,
+				.sizeIcon{
+					border-top: 1px solid #a2a2a2;
+					border-bottom: 1px solid #a2a2a2;
+					text-align: right;
+					position: absolute;
+					color: $color_main;
+					background: url(/common/images/components/arrow.svg) no-repeat 100% 0;
+					background-size: auto 100%;
+					padding-right: 25px;
+				}
+				.sizeInput{
+					line-height: 100px;
+					height: 100px;
+					width: 650px;
+					top: 0;
+					left: 0;
+				}
+				.sizeIcon{
+					&.radio{
+						top: 25px;
+						left: 25px;
+						line-height: 51px;
+						width: 370px;
+						height: 51px;
+					}
+					&.checkbox{
+						top: 10px;
+						left: 8px;
+						line-height: 74px;
+						width: 387px;
+						height: 74px;
+					}
+				}
+			}//.formSize
+		}
+
+	}//$#setting
+
+}//.fw

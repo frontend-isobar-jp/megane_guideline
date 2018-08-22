@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+.fw {
+
+    // ----------------------------------------------------------
+    // Other
+    // ----------------------------------------------------------
+
+    .a-code {
+        line-height: 1.4;
+        code { padding: 0 20px 20px; }
+    }
+
+
+    .a-menu_index {
+        line-height: 1;
+        .ttl {
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e3e3e3;
+
+            font-size: 20px;
+            img {
+                display: inline-block;
+                height: 20px; width: auto;
+                vertical-align: top;
+                margin-right: 10px;
+            }
+            i{
+                margin-right: 15px;
+                // color: $gl-black60;
+            }
+            a {
+                &:hover {
+                    color: $color_link;
+                }
+                &:after{
+                    display: none;
+                }
+            }
+        }
+        ul {
+            li {
+                a {
+                    line-height: 160%;
+                    text-decoration: none;
+                    color: $color_text;
+                    position: relative;
+                    padding: 0 35px;
+                    height: 65px;
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 1px solid #eeeeee;
+                    @include arrowAbs($color:$color_link, $size:6, $width:2, $layout:left, $position:10, $direction:right);
+                    &:before {
+                        margin-right: 12px;
+                    }
+                    &:after {
+                        transform: rotate(0deg);
+                        border: none;
+                        position: absolute;
+                        right: 15px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                    &:hover {
+                        background: #eeeeee
+                    }
+                }
+            }
+
+        }
+    }//ul.index
+
+    .j-pagetop{
+        @include arrowAbs($color:#fff, $size:10, $width:4, $layout:right, $position:17, $direction:top);
+        background-color: rgba( $black50,.6);
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        right: 25px;
+        bottom: 25px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .4s;
+        z-index: 10;
+        &:before{
+            margin-top: 3px;
+        }
+        &:hover{
+            opacity: 0.8;
+        }
+        &.is-show{
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+}//.fw

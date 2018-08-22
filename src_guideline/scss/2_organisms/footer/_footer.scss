@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+.fw {
+
+	.j-pagetop {
+		a {
+			display: block;
+			width: 40px; height: 40px;
+			right: 30px; bottom: 30px;
+			background: $color_link;
+			border-radius: 100%;
+			@include arrowAbs($color:#FFF, $size:10, $width:2, $direction:top);
+			position: fixed;
+			&:before {
+				margin-top: 2px;
+				left: 50%; top: 50%;
+				transform: translate(-50%,-50%) rotate(-45deg);
+			}
+		}
+	}
+
+	// ----------------------------------------------------------
+	// Footer
+	// ----------------------------------------------------------
+	#footer {
+		background: #414141;
+		color: #FFF;
+		font-size: 11px;
+		line-height: 1;
+		padding: 25px 30px;
+		margin-top: 120px;
+		text-align: center;
+	}
+}//.fw

@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+.fw {
+
+	// ----------------------------------------------------------
+	// Button
+	// ----------------------------------------------------------
+
+    a.a-btn {
+		display: inline-block !important;
+		background: $black50;
+		color: #FFF;
+		line-height: 1;
+		// box-shadow: 0px 0px 5px 0 rgba(0, 0, 0, 0.4);
+		text-align: center;
+		border-radius: 2px;
+		text-decoration: none;
+        transition: opacity 0.3s ease, box-shadow 0.3s ease;
+        padding: 15px 40px;
+	}
+
+
+}//.fw

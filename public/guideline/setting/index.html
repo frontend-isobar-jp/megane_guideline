@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="noindex,nofollow">
+
+    <title>SCSS Settings | Web Site Guide Line</title>
+
+    <!-- ICON -->
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link href="../assets/css/guideline.css" rel="stylesheet">
+
+</head>
+
+<body id="setting" class="fw setting_top">
+
+    <!-- header -->
+    <header id="header"></header>
+    <!-- header -->
+
+    <main id="container">
+
+        <div class="a-ttl_gl_wrap">
+            <h1>
+                <i class="fas fa-cog"></i>SCSS Setting
+            </h1>
+        </div>
+
+        <div class="f-inner">
+
+            <div id="contents" class="f-max">
+
+                <!-- ================================================ #siteWidth -->
+                <section id="siteWidth" class="f-section">
+                    <h2 class="a-ttl_gl_base">Layout Width<span class="f-font_s">setting/_width.scss</span></h2>
+
+                    <div class="f-box f-box_solid mainWidth"><span class="f-txt_red">$width_main:</span> 1160; //px</div>
+                    <div class="clearfix">
+                        <div class="f-box f-box_solid contentsWidth"><span class="f-txt_red">$width_contents:</span> 855; //px</div>
+                        <div class="f-box f-box_solid sideWidth"><span class="f-txt_red">$width_side:</span> 245; //px</div>
+                    </div>
+
+                </section>
+                <!-- ================================================ #siteWidth -->
+
+                <!-- ================================================ #breakpoint -->
+                <section id="breakPoint" class="f-section">
+                    <h2 class="a-ttl_gl_base">Break Point<span class="f-font_s">setting/_breakpoint.scss</span></h2>
+
+                    <div class="f-box f-box_solid spWidth"><span class="f-txt_red">$breakpoints s:</span> 640; //px</div>
+                    <div class="f-box f-box_solid tbWidth"><span class="f-txt_red">$breakpoints m:</span> 768; //px</div>
+
+                </section>
+                <!-- ================================================ #breakpoint -->
+
+                <!-- ================================================ #font -->
+                <section id="font" class="f-section">
+                    <h2 class="a-ttl_gl_base">Font<span class="f-font_s">setting/_font.scss</span></h2>
+
+                    <section>
+                        <h3 class="a-ttl_gl_base">font-family</h3>
+                        <div class="f-box_solid">
+                            <span class="f-txt_red">$font_base:</span><br>
+                            'Noto Sans', 'NotoSansCJKjp-Light','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+                        </div>
+                    </section>
+
+                    <section class="f-section_s">
+                        <h3 class="a-ttl_gl_base">font-size</h3>
+                        <div class="f-box_solid">
+                            <span class="f-txt_red">$font-size_base: </span>14; //px
+                        </div>
+                    </section>
+
+                    <section class="f-section_s">
+                        <h3 class="a-ttl_gl_base">line-height</h3>
+                        <div class="f-box_solid">
+                            <span class="f-txt_red">$line-height_base: </span>180%;
+                        </div>
+                    </section>
+
+                </section>
+                <!-- ================================================ #font -->
+
+                <!-- ================================================ #color -->
+                <section id="color" class="f-section">
+                    <h2 class="a-ttl_gl_base">Color<span class="f-font_s">setting/_color.scss</span></h2>
+
+                    <section>
+                        <h3 class="a-ttl_gl_base">Thema</h3>
+                        <div class="f-col f-col_mb5">
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box mainColor">$color_main: #ec4501;</div></div>
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box subColor">$color_sub: #111;</div></div>
+                        </div>
+                    </section>
+
+                    <section class="f-section_s">
+                        <h3 class="a-ttl_gl_base">Text / Link</h3>
+                        <div class="f-col f-col_mb5">
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box linkColor">$color_link: #ec4501;</div></div>
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box black">$color_text: #111;</div></div>
+                        </div>
+                    </section>
+
+                    <section class="f-section_s">
+                        <h3 class="a-ttl_gl_base">Grayscale</h3>
+                        <div class="f-col f-col_mb5">
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box black100">$black100: #000;</div></div>
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box black90">$black90: #333;</div></div>
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box black80">$black80: #504f4f;</div></div>
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box black70">$black70: #666;</div></div>
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box black60">$black60: #7d7d7d;</div></div>
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box black50">$black50: #999;</div></div>
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box black40">$black40: #b2b1b1;</div></div>
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box black30">$black30: #CCC; //罫線等に使用</div></div>
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box black20">$black20: #DDD;</div></div>
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box black10">$black10: #e3e3e3;</div></div>
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box black0">$black0: #f7f7f7; //背景等に使用</div></div>
+                        </div>
+                    </section>
+
+                    <section class="f-section_s">
+                        <h3 class="a-ttl_gl_base">Other</h3>
+                        <div class="f-col f-col_mb5">
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box red">$red: #ea0a0a;</div></div>
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box blue">$blue: #2D72A7;</div></div>
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box yellow">$yellow: #ead805;</div></div>
+                            <div class="f-col4 f-col6_m f-col12_s"><div class="f-box green">$green: #9abc50;</div></div>
+                        </div>
+                    </section>
+
+                </section>
+                <!-- ================================================ #color -->
+
+                <!-- ================================================ #column -->
+                <section id="column" class="f-section">
+                    <h2 class="a-ttl_gl_base">Column Margin<span class="f-font_s">setting/_column.scss</span></h2>
+
+                    <div class="f-col">
+                        <div class="f-col6"><div class="f-box f-box_solid">.f-col6</div></div>
+                        <div class="f-col6"><div class="f-box f-box_solid">.f-col6</div></div>
+                    </div>
+                    <p class="columnMargin"><span class="f-txt_red">$col_gutter: </span>60; //px</p>
+
+                </section>
+                <!-- ================================================ #column -->
+
+                <!-- ================================================ #form -->
+                <section id="form" class="f-section">
+                    <h2 class="a-ttl_gl_base">Form<span class="f-font_s">setting/_form.scss</span></h2>
+
+                    <form class="f-form">
+
+                        <div class="f-pb40">
+                            <div class="f-col f-col_mb5">
+                                <div class="f-col4 f-col6_m f-col12_s">
+                                    <div class="f-box red" style="background-color: #ec4501; color: #fff; text-align: center;">$input_color: #ec4501;</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="f-pb40">
+                            <input type="text" placeholder="" class="f-form_inline">
+                            <p class="f-pt10"><span class="f-txt_red">$input_height: </span>30;//px</p>
+                        </div>
+
+                        <div class="f-pb40">
+                            <div class="f-form_label">
+                                <input type="radio" name="radio2" checked="checked">
+                                <label>radio1</label>
+                            </div>
+
+                            <div class="formSize f-mt20">
+                                <img src="/guideline/assets/images/setting/radio.png" alt="" title="">
+                                <p class="sizeInput">$input-icon_base: 20//px</p>
+                                <p class="sizeIcon radio">$input-icon_radio: 10//px</p>
+                            </div>
+
+                        </div>
+
+                        <div class="f-pb40">
+
+                            <div class="f-form_label">
+                                <input type="checkbox" name="" checked="checked">
+                                <label>checkbox1</label>
+                            </div>
+
+                            <div class="formSize f-mt20">
+                                <img src="/guideline/assets/images/setting/checkbox.png" alt="" title="">
+                                <p class="sizeInput">$input-icon_base: 20//px</p>
+                                <p class="sizeIcon checkbox">$input-icon_check: 16//px</p>
+                            </div>
+
+                        </div>
+
+                    </form>
+
+
+                </section>
+                <!-- ================================================ #form -->
+
+            </div>
+            <!-- /#contents -->
+
+        </div>
+
+    </main>
+    <!-- /#container -->
+
+    <!-- footer -->
+    <footer id="footer"></footer>
+    <!-- footer -->
+
+    <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

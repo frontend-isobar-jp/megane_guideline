@@ -1,0 +1,248 @@
+@charset "utf-8";
+
+
+.fw {
+
+    // コピー制御（モーダル表示中）
+    &.is-not_select{
+
+
+        & > *:not(#j-modal_code_box),
+        #j-modal_code_box_close{
+            pointer-events: none;
+            user-select: none;
+        }
+
+        #window_resizer_tooltip_wrapper{
+            display: none !important;
+        }
+
+
+        #j-modal_code_wrap{
+            code{
+                user-select: auto;
+                user-select: element; //FF MS対応
+            }
+        }
+    }
+
+    #container{
+        padding-left: 0 ;
+    }
+
+    .m-gl_nav{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: $gl-black80;
+        padding: 20px;
+        a{
+            color: #fff;
+            padding: 0 20px;
+            margin: 5px 0;
+            border-right: 1px solid #fff;
+            display: inline-block;
+            line-height: 130%;
+            span{
+                display: none;
+            }
+            &:hover{
+                opacity: .8;
+            }
+        }
+        li{
+            @include arrowAbs($color:#fff, $size:6, $width:2, $layout:top, $position:10, $direction:top);
+            &:before{
+                top: -3px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                opacity: 0;
+                // transform: translateY(5px);
+                transition: .2s;
+            }
+            &.active{
+                &:before{
+
+                    opacity: 1;
+                    // transform: translateY(0);
+                }
+
+            }
+            &:last-child{
+                a{
+                    border: none;
+                }
+            }
+        }
+    }
+
+    .f-section {
+        border: none;
+        >.f-section {
+            margin-top: 0;
+        }
+    }
+
+    [class*="a-ttl_gl_"]{
+        position: relative;
+    }
+
+    h1.a-ttl_gl_detail {
+        @include fontSize(36px,26px);
+        @include mb(40px,20px);
+    }
+    h2.a-ttl_gl_detail {
+        font-weight: bold;
+        @include fontSize(26px,18px);
+        @include mb(40px,20px);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $black40;
+        & + .f-section{
+            padding-top: 0;
+        }
+    }
+    h3.a-ttl_gl_detail {
+        font-weight: bold;
+        @include fontSize(18px,13px);
+        margin-bottom: 20px;
+        padding: 14px 20px;
+        background: $gl-black0;
+        color: $color_text;
+    }
+
+    [class*="a-ttl_gl_atomic"]{
+        position: relative;
+        &:after{
+            content: "";
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 110px;
+            line-height: 30px;
+            font-size: 14px;
+            text-align: center;
+            border-radius: 4px;
+            color: #fff;
+        }
+    }
+    .a-ttl_gl_atomic_a{
+        &:after{
+            content: "Atoms";
+            background-color: $gl-green;
+        }
+    }
+    .a-ttl_gl_atomic_m{
+        &:after{
+            content: "Molecules";
+            background-color: $gl-blue;
+        }
+    }
+    .a-ttl_gl_atomic_o{
+        &:after{
+            content: "Organisms";
+            background-color: $gl-yellow;
+        }
+    }
+    .a-ttl_gl_atomic_t{
+        &:after{
+            content: "Templates";
+            background-color: $gl-aqua;
+        }
+    }
+    .a-ttl_gl_atomic_p{
+        &:after{
+            content: "Pages";
+            background-color: $gl-red;
+        }
+    }
+
+    .getCode{
+        background: url(/guideline/assets/images/icons/code.png) no-repeat 0 50%;
+        background-size: 20px auto;
+        padding: 5px 0 5px 30px;
+        font-weight: bold;
+        font-size: 12px;
+        cursor: pointer;
+        &:hover{
+            opacity: 0.6;
+        }
+
+    }
+    h2.a-ttl_gl_detail{
+        .getCode{
+            position: absolute;
+            bottom: -40px;
+            right: 5px;
+        }
+    }
+    h3.a-ttl_gl_detail{
+        .getCode{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px;
+        }
+    }
+
+    .changeLang{
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-weight: bold;
+        background-color: $gl-black80;
+        color: #fff;
+        padding: 10px;
+        a{
+            color: #fff;
+            display: inline-block;
+            padding: 0 10px;
+            opacity: 0.2;
+            &.active{
+                opacity: 1;
+            }
+        }
+    }
+
+    .is-lang_jp & {
+        [lang="jp"]{
+            display: block;
+        }
+        [lang="en"]{
+            display: none;
+        }
+    }
+    .is-lang_en & {
+        [lang="jp"]{
+            display: none;
+        }
+        [lang="en"]{
+            display: block;
+        }
+    }
+
+// ---------------------------------------------------------------------------
+//
+// #componentList
+//
+// ---------------------------------------------------------------------------
+&#componentList {
+    // ----------------------------------------------------------
+    // .componentList_detail    /component_list/detail/index.html
+    // ----------------------------------------------------------
+    &.componentList_detail {
+
+    }//.componentList_detail
+
+}//$#componentList
+
+}//.fw

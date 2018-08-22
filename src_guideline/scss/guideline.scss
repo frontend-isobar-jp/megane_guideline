@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+// font-family,size,やcolor,width等の設定
+@import "../../src/scss/setting/setting";
+@import "setting/color";
+//
+// // Megane Template Core File
+@import "../../src/fw/reset";
+@import "../../src/scss/mixin";
+@import "../../src/scss/base";
+
+@import "atom-one-dark";
+@import "fontawesome-all.min";
+
+// ----------------------------------------------------------
+// Atomic Design
+// ----------------------------------------------------------
+
+//Atoms
+@import "0_atoms/atoms";
+
+//Molecules
+@import "1_molecules/molecules";
+
+//Organisms
+@import "2_organisms/organisms";
+
+//Templates
+@import "3_templates/templates";
+
+//Pages
+@import "4_pages/pages";

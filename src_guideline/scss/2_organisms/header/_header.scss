@@ -1,0 +1,222 @@
+@charset "utf-8";
+
+.fw {
+
+	// ----------------------------------------------------------
+	// Header
+	// ----------------------------------------------------------
+
+	$headerH : 60px;
+
+	#header {
+		height: $headerH;
+		#header_inner {
+			position: fixed;
+			width: 100%; height: $headerH;
+			top: 0; left: 0;
+			background: #FFF;
+			border-bottom: 1px solid $black30;
+			// box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+			z-index: 9999;
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			#spMenu { display: none; }
+			#logo {
+				flex: 1 0 auto;
+				margin-left: 15px;
+				float: left;
+				img { height: 30px; width: auto; }
+			}
+			#meganeLogo {
+				float: right;
+				margin: -15px 0;
+				a {
+					background: #ec4501;
+					width: $headerH; height: $headerH;
+					display: flex;justify-content: center;align-items: center;
+					img { height: 18px; width: auto; }
+					&:after{
+						display: none;
+					}
+				}
+			}
+			#glovalNav {
+				padding-right: 15px;
+				// float: right;
+				// margin: -15px 0;
+				display: flex;
+				justify-content: flex-end;
+
+				>ul {
+					// @include clearfix;
+					display: flex;
+					justify-content: flex-end;
+					align-items: center;
+					height: $headerH;
+					>li {
+						// float: right;
+						position: relative;
+						height: 100%;
+						.ttl{
+							padding: 0 20px;
+							height: 100%;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							i{
+								margin-right: 5px;
+							}
+						}
+						>a {
+							display: block;
+							text-align: center;
+							text-decoration: none;
+							color: $color_text;
+							width: 160px;
+							line-height: $headerH;
+							&.active {
+								color: $color_link;
+							}
+						}
+						ul {
+							@include triangle($color:$black20, $width:15, $height:10, $direction:top);
+							display: none;
+							position: absolute;
+							top: $headerH;
+							right: 0;
+							background: #FFF;
+							box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.2);
+							padding: 10px 15px;
+							border-radius: 0 0 2px 2px;
+							&:before{
+								left: inherit;
+								right: 20%;
+							}
+							li {
+								a {
+									display: block;
+									min-width: 220px;
+									color: $color_text;
+									line-height: 1;
+									text-decoration: none;
+									padding: 15px 0;
+									border-bottom: 1px solid $black20;
+									position: relative;
+									&:after {
+										position: absolute;
+										top: 50%; right: 0;
+										transform: translate(0, -50%);
+									}
+									&:hover,&.active {
+										color: $color_link;
+									}
+								}
+								&:last-child {
+									a { border-bottom: none; }
+								}
+							}
+						}//ul
+						&:hover {
+							>a { color: $color_link; }
+							ul { display: block; }
+						}
+					}//>li
+				}
+			}//#glovalNav
+		}
+		
+		@include max( s ) {
+
+			#header_inner {
+				padding: 15px 0px 15px 15px;
+				#spMenu {
+					$width: 26px;
+					$height: 16px;
+					$weight: 2px;
+					float: right;
+					position: relative;
+					display: block;
+					width: $width;
+					height: $height;
+					-webkit-tap-highlight-color:rgba(0,0,0,0);
+					margin: 8px 15px 0px 0px;
+					span {
+						display: inline-block;
+						transition: all 0.2s;
+						position: absolute;
+						left: 0;
+						width: 100%;
+						height: $weight;
+						background-color: $color_main;
+						&:nth-of-type(1) {
+							top: 0;
+						}
+						&:nth-of-type(2) {
+							top: 50%;
+							margin-top: -$weight/2;
+						}
+						&:nth-of-type(3) {
+							bottom: 0;
+						}
+					}
+					&.active {
+						span{
+							&:nth-of-type(1) {
+								transform: translateY(($height - $weight)/2) rotate(-45deg);
+							}
+							&:nth-of-type(2) {
+								opacity: 0;
+							}
+							&:nth-of-type(3) {
+								transform: translateY(-($height - $weight)/2) rotate(45deg);
+							}
+						}
+					}
+				}
+				#meganeLogo {
+					display: none;
+				}
+				#glovalNav {
+					position: fixed;
+					width: 80%; height: 110%;
+					background: #414141;
+					top: 60px; right: 0;
+					margin: 0;
+					float: inherit;
+					@include transition(0.2);
+					transform: translate(100%,0);
+					&.active {
+						transform: translate(0,0);
+					}
+					>ul {
+						>li {
+							float: inherit;
+							>a {
+								text-align: left;
+								border-bottom: 1px solid $black80;
+								width: 100%;
+								padding: 25px 20px;
+								line-height: 1;
+								color: #FFF;
+								@include arrowAbs($color: #FFF, $size: 12, $width: 1, $layout: right, $direction:right, $position: 15);
+								&.active {
+									color: #FFF;
+									background: $color_text;
+								}
+							}
+							&:hover {
+								a { color: #FFF; }
+								ul { display: none; }
+							}
+						}//>li
+					}
+				}
+			}
+
+		}//sp
+
+	}//#header
+
+}//.fw
