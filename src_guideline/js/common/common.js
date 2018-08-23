@@ -5,7 +5,7 @@ import showPagetop from './_show_pagetop';
 
 const Init =  () => {
 
-
+    let root = location.pathname.split("/guideline")[0];
 
     // ACCORDION
     // ----------------------------------------------------------
@@ -19,6 +19,22 @@ const Init =  () => {
 
     const AFTER_HEADER = ()=> {
 
+        //a,imgのパス調整
+        let header = document.getElementById('header'),
+            headerImg = header.getElementsByTagName('img'),
+            headerA = header.getElementsByTagName('a');
+
+        for (var i = 0; i < headerA.length; i++) {
+            let href = headerA[i].href;
+            if( href.indexOf("megane-template.com") === -1 ) {
+                headerA[i].href = root + href.split(location.origin)[1];
+            }
+        }
+        for (var i = 0; i < headerImg.length; i++) {
+            let src = headerImg[i].src;
+            headerImg[i].src = root + src.split(location.origin)[1];
+        }
+
     }
 
     const AFTER_FOOTER = ()=> {
@@ -28,9 +44,6 @@ const Init =  () => {
         showPagetop();
 
     }
-
-
-    let root = location.pathname.split("/guideline")[0];
 
     new GetIncludes('#header', root + '/guideline/assets/include/header.html', AFTER_HEADER);
     new GetIncludes('#footer', root + '/guideline/assets/include/footer.html', AFTER_FOOTER);
