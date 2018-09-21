@@ -85,8 +85,10 @@
 
     .f-section {
         border: none;
-        >.f-section {
-            margin-top: 0;
+        > [class*="f-section"] {
+            &:first-of-type{
+                margin-top: 0;
+            }
         }
     }
 
