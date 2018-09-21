@@ -87,19 +87,17 @@ gulp.task('sass', () => {
     Sass(SETTING);
 });
 
+gulp.task('scripts', () => {
+    Scripts(SETTING);
+});
+
 gulp.task('serve', () => {
     BrowserSync(SETTING);
 });
 
 gulp.task('build', () => {
-
     Sass(SETTING,"prod");
-
-    SETTING.js.forEach( function(e,i,entryPoint) {
-
-        Scripts(SETTING.js[i],true,"prod");
-
-    });
+    Scripts(SETTING,"prod");
 });
 
 gulp.task('zip', () => {
@@ -109,15 +107,11 @@ gulp.task('zip', () => {
 gulp.task('watch', () => {
 
     SETTING.sass[0].path.forEach( function(e,i,entryPoint) {
-
         gulp.watch(SETTING.sass[0].path[i].src + '*.scss', ['sass']);
-
     });
 
-    SETTING.js.forEach( function(e,i,entryPoint) {
-
-        Scripts(SETTING.js[i],true);
-
+    SETTING.js.forEach( function(e,i) {
+        gulp.watch(SETTING.js[i].src + '*.js', ['scripts']);
     });
 
 });
