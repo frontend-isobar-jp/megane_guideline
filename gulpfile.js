@@ -14,7 +14,7 @@ const SETTING = {
 
     'bs': [
         {
-            'port': 9000, // browser-sync port
+            'port': 8000, // browser-sync port
             'target': [ // browser-sync watch file
                 '**/*.html',
                 '**/assets/css/*.css',
